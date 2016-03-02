@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<math.h>
+float p,q;
+void m(float a,float b,float c,float d)
+{
+ p=(-b+sqrt(d))/(2*a);
+ q=(-b-sqrt(d))/(2*a);
+ printf("x1=%.3f\n x2=%.3f",p,q);
+}
+void f(float a,float b,float c,float d)
+{
+ p=-b/(2*a); printf("x1=x2=%.3f\n",p);
+}
+void j(float a,float b,float c,float d)
+{
+    float e;
+    float f;
+
+    e=-b/(a*2);
+    f=sqrt(-d)/(2*a);
+    printf("x1=%.3f+%.3fi x2=%.3f-%.3fi",e,f,e,f);
+
+}
+int main()
+{
+ float a,b,c;
+    float d;
+ scanf("%f%f%f",&a,&b,&c);
+ d=b*b-4.0*a*c;
+ if(d>0)
+ {
+  m(a,b,c,d);
+ }
+ else if(d==0)
+ {
+  f(a,b,c,d);
+    }
+ else
+ {
+  j(a,b,c,d);
+ }
+    printf("\n");
+ return 0;
+}
